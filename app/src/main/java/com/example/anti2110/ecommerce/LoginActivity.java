@@ -85,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(this, "Confirm input box", Toast.LENGTH_SHORT).show();
         } else {
             progressDialog.setTitle("Login Account");
-            progressDialog.setMessage("Please wait, white we are checking the credentials.");
+            progressDialog.setMessage("Please wait, while we are checking the credentials.");
             progressDialog.setCanceledOnTouchOutside(false);
             progressDialog.show();
 
