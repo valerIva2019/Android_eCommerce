@@ -83,11 +83,14 @@ public class MainActivity extends AppCompatActivity {
 
                         if (usersData.getPassword().equals(password)) {
 
-                            Toast.makeText(MainActivity.this, "Pleasw wait, you are already logged in", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "Please wait, you are already logged in", Toast.LENGTH_SHORT).show();
                             progressDialog.dismiss();
 
                             Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                            Prevalent.currentOnlineUser = usersData;
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
+                            finish();
                         } else {
                             Toast.makeText(MainActivity.this, "Password is incorrect!", Toast.LENGTH_SHORT).show();
                             progressDialog.dismiss();
